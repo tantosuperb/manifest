@@ -6,12 +6,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: testcafe-nginx
+      app: deploy-artifact-nginx
   template:
     metadata:
-      name: testcafe-nginx-pod
+      name: deploy-artifact-nginx-pod
       labels:
-        app: testcafe-nginx
+        app: deploy-artifact-nginx
     spec:
       containers:
       - name: nginx
