@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${name}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-artifact-nginx
+  template:
+    metadata:
+      name: deploy-artifact-nginx-pod
+      labels:
+        app: deploy-artifact-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
